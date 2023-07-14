@@ -49,7 +49,7 @@ userRouter.post('/login', async (req, res) => {
   
       // Create a JWT
       const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
-        expiresIn: '1h'
+        expiresIn: '24h'
       });
 
       res.json({ msg:"login successful",token,username:user.username});

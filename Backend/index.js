@@ -3,12 +3,13 @@ require("dotenv").config()
 const {connection}=require("./db")
 const app= express();
 const {userRouter}= require("./controller/user.routes")
+const {appRouter}= require("./controller/app.routes")
 const {authMiddleware}= require("./middleware/authentication")
 app.use(express.json())
 
 app.use("/user",userRouter)
 app.use(authMiddleware)
-// app.use("/data",appRouter)
+app.use("/data",appRouter)
 app.listen(process.env.PORT,async()=>{
 
     try{
