@@ -7,15 +7,17 @@ const {userRouter}= require("./controller/user.routes")
 const {appRouter}= require("./controller/app.routes")
 const {authMiddleware}= require("./middleware/authentication")
 app.use(express.json())
-app.use(cors());
+
+app.use(cors({
+    origin: 'http://localhost:4200'
+  }));
 
 app.get("/",(req,res)=>{
     res.send({"message":"Welcome to Fletnix"})
 })
-app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
-    next();
-});
+
+
+
 app.use("/user",userRouter)
 app.use(authMiddleware)
 app.use("/data",appRouter)
