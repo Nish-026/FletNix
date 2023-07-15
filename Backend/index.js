@@ -7,6 +7,9 @@ const {appRouter}= require("./controller/app.routes")
 const {authMiddleware}= require("./middleware/authentication")
 app.use(express.json())
 
+app.get("/",(req,res)=>{
+    res.send({"message":"Welcome to Netflix"})
+})
 app.use("/user",userRouter)
 app.use(authMiddleware)
 app.use("/data",appRouter)
