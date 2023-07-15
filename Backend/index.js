@@ -8,7 +8,7 @@ const {authMiddleware}= require("./middleware/authentication")
 app.use(express.json())
 
 app.get("/",(req,res)=>{
-    res.send({"message":"Welcome to Netflix"})
+    res.send({"message":"Welcome to Fletnix"})
 })
 app.use("/user",userRouter)
 app.use(authMiddleware)
