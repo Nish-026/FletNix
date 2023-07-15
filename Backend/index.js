@@ -12,6 +12,10 @@ app.use(cors());
 app.get("/",(req,res)=>{
     res.send({"message":"Welcome to Fletnix"})
 })
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
+    next();
+});
 app.use("/user",userRouter)
 app.use(authMiddleware)
 app.use("/data",appRouter)
