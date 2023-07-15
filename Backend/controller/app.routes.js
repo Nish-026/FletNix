@@ -73,3 +73,4 @@ module.exports={
 
 //Routes
 // localhost:4500/data/?page=1&pageSize=15&type=Movie
+// localhost:4500/data/?q=Kota

@@ -16,6 +16,10 @@ const userSchema = new mongoose.Schema({
   age:{
     type: Number,
     required: true
+  },
+  Registration_year:{
+    type: Date,
+    default: new Date().getFullYear()
   }
 });
 
