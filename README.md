@@ -14,9 +14,6 @@ FletNix is a web application that allows users to search for and filter through 
 - [Content Filtering](#content-filtering)
 - [Filter Functionality](#filter-functionality)
 - [Detail Page](#detail-page)
-- [Testing](#testing)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 - User registration and login with email, password, and age verification.
@@ -66,7 +63,7 @@ Clicking on an item in the list will take users to a dedicated detail page for t
 ### Tech Stack
 
 #### Front-End
--  Angular <img src="https://github.com/Nish-026/Learning_Angular/assets/115637679/e5dd2321-8868-4e4a-b607-207baf6e436b">
+-  Angular <img src="https://github.com/Nish-026/Learning_Angular/assets/115637679/e5dd2321-8868-4e4a-b607-207baf6e436b" alt="HTML Icon" width="32" height="22">
 
 #### Back-End
 -  Node JS  <img src="https://raw.githubusercontent.com/get-icon/geticon/fc0f660daee147afb4a56c64e12bde6486b73e39/icons/nodejs.svg" alt="HTML Icon" width="32" height="22">
