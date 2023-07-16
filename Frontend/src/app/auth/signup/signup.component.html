@@ -1,0 +1,37 @@
+<div style="height: 100vh; align-items: center; display: flex;">
+    <div class="col-4 m-auto login-format">
+        <div class="img-div">
+            <img src="../../../assets/images/FletNix.png">
+        </div>
+        <div class="mb-3 row">
+            <label for="staticEmail" class="col-3 col-form-label" for="email">Name:</label>
+            <div class="col-9">
+                <input type="text" id="userName" [(ngModel)]="userName" name="userName" required class="form-control">
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="staticEmail" class="col-3 col-form-label" for="email">Age:</label>
+            <div class="col-9">
+                <input type="number" id="age" [(ngModel)]="age" name="age" required class="form-control">
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="staticEmail" class="col-3 col-form-label" for="email">Email:</label>
+            <div class="col-9">
+                <input type="email" id="email" [(ngModel)]="email" name="email" required class="form-control">
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="inputPassword" class="col-3 col-form-label" for="password">Password:</label>
+            <div class="col-9">
+                <input type="password" id="password" [(ngModel)]="password" name="password" required class="form-control">
+            </div>
+        </div>
+        <div class="text-center">
+            <button type="button" class="btn btn-primary btn-lg" (click)="submitForm()" style="border-radius: 40px; width: -webkit-fill-available;">Sign up</button>
+        </div>
+        <div class="text-center mt-4">
+            <a routerLink="/login" style="text-decoration: none;">Already have an account?, LogIn here!</a>
+        </div>
+    </div>
+</div>

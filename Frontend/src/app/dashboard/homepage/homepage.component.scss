@@ -1,0 +1,10 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three equal-width columns */
+    grid-gap: 10px; /* Gap between grid items */
+  }
+  
+  .grid-item {
+    /* Style for grid items */
+  }
+  
