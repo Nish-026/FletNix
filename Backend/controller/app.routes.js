@@ -31,20 +31,19 @@ appRouter.get('/', async (req, res) => {
     const user= await User.find({_id:req.body.user})
     const filteredMovies = user.age < 18 ? movies.filter(movie => movie.rating !== 'R') : movies;
     // Count the total number of movies/TV shows in the collection
-    const totalCount = await Data.countDocuments();
-
+    const totalCount = await filteredMovies.countDocuments();
+    console.log(totalCount);
     // Calculate the total number of pages
     const totalPages = Math.ceil(totalCount / pageSize);
 
     res.status(200).json({
-      Data: filteredMovies,
+      movies: filteredMovies,
       currentPage: page,
       totalPages,
       pageSize,
       totalCount,
     });
   } catch (error) {
-    console.log(error)
     res.status(500).json({ message: 'Something went wrong' });
   }
 });
@@ -73,4 +72,5 @@ module.exports={
 
 //Routes
 // localhost:4500/data/?page=1&pageSize=15&type=Movie
-// localhost:4500/data/?q=Kota
+
+// localhost:4500/data/?page=1&pageSize=15&q=Kota

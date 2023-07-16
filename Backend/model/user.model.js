@@ -17,9 +17,10 @@ const userSchema = new mongoose.Schema({
     type: Number,
     required: true
   },
-  Registration_year:{
+  RegistrationYear: {
     type: Date,
-    default: new Date().getFullYear()
+    default: Date.now,
+    get: () => new Date().getFullYear(),
   }
 });
 
