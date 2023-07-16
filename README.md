@@ -1,5 +1,6 @@
 
-![FletNix](https://github.com/Nish-026/FletNix/assets/115637679/ea116c4a-700a-4ff2-bc6d-362f5cc14e3a)
+![FletNix-removebg-preview](https://github.com/Nish-026/FletNix/assets/115637679/2d4ced14-74c6-40ec-8b25-1b197b542d91)
+
 
 # FletNix - Netflix Movie/TV Show Search and Filter App
 
