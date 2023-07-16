@@ -8,36 +8,39 @@ appRouter.get('/', async (req, res) => {
   try {
     const page = req.query.page || 1; // Current page number
     const skip = (page - 1) * pageSize;
-    const type= req.query.type;
+    const type = req.query.type;
+    const user = await User.findById(req.body.user); // Retrieve user by ID
+
     let query = {};
     const searchQuery = req.query.q; // Search query for movie title or cast
     if (searchQuery) {
-        // Create a regular expression pattern for case-insensitive search
-        const searchPattern = new RegExp(`\\b${searchQuery}\\b`, 'i');
-        // Add search condition to the query
-        query = {
-          $or: [
-            { title: searchPattern }, // Search by movie title
-            { cast: searchPattern } // Search by cast
-          ]
-        };
-      }
-      if (type) {
-        // Add item type condition to the query
-        query.type = type;
-      }
-    console.log(query)
+      // Create a regular expression pattern for case-insensitive search
+      const searchPattern = new RegExp(`\\b${searchQuery}\\b`, 'i');
+      // Add search condition to the query
+      query.$or = [
+        { title: searchPattern }, // Search by movie title
+        { cast: searchPattern }, // Search by cast
+      ];
+    }
+    if (type) {
+      // Add item type condition to the query
+      query.type = type;
+    }
+    if (user.age < 18) {
+      // Check if user is under 18 and exclude R-rated movies
+      query.rating = { $ne: 'R' };
+    }
+
     const movies = await Data.find(query).skip(skip).limit(pageSize);
-    const user= await User.find({_id:req.body.user})
-    const filteredMovies = user.age < 18 ? movies.filter(movie => movie.rating !== 'R') : movies;
+
     // Count the total number of movies/TV shows in the collection
-    const totalCount = await filteredMovies.countDocuments();
-    console.log(totalCount);
+    const totalCount = await Data.countDocuments(query);
+
     // Calculate the total number of pages
     const totalPages = Math.ceil(totalCount / pageSize);
 
     res.status(200).json({
-      movies: filteredMovies,
+      movies,
       currentPage: page,
       totalPages,
       pageSize,
@@ -47,6 +50,7 @@ appRouter.get('/', async (req, res) => {
     res.status(500).json({ message: 'Something went wrong' });
   }
 });
+
 
 
 appRouter.get('/:id', async (req, res) => {
