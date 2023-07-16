@@ -1,4 +1,5 @@
-![logo](https://github.com/Nish-026/Learning_Angular/assets/115637679/22c9dfb5-8332-4276-ad30-c009f748e33b)
+
+![FletNix](https://github.com/Nish-026/FletNix/assets/115637679/ea116c4a-700a-4ff2-bc6d-362f5cc14e3a)
 
 # FletNix - Netflix Movie/TV Show Search and Filter App
 
