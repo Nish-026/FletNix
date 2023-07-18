@@ -53,7 +53,7 @@ userRouter.post('/login', async (req, res) => {
         expiresIn: '24h'
       });
 
-      res.json({ msg:"login successful",token,username:user.username});
+      res.status(200).json({ message:"login successful",token,username:user.username});
     } catch (error) {
         res.status(500).json({ message: 'Something went wrong' });
     }
