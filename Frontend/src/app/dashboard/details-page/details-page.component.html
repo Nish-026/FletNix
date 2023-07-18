@@ -1,0 +1,17 @@
+<div>
+    <app-navbar></app-navbar>
+</div>
+<div id="card_container" data-offset="2">
+    <div id="card">
+        <div class="text-block">
+            <h1>{{movieDetails.title}}   <small>{{movieDetails.release_year}}</small></h1>
+            <h1><small>{{movieDetails.country}}</small></h1>
+            <h3>{{movieDetails.show_id}} | {{movieDetails.type}} | {{movieDetails.rating}} | {{movieDetails.duration}} </h3>
+            <h2>{{movieDetails.listed_in}}</h2>
+            <h2 *ngIf="movieDetails.listed_in">Directed by {{movieDetails.listed_in}}</h2>
+            <h5 *ngIf="movieDetails.cast">{{movieDetails.cast}}</h5>
+            <h2>{{movieDetails.listed_in}}</h2>
+            <p>{{movieDetails.description}}</p>
+        </div>
+    </div>
+</div>

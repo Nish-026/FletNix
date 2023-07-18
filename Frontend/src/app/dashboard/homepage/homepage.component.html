@@ -1,12 +1,56 @@
-<app-navbar></app-navbar>
-<div class="grid-container">
-    <div *ngFor="let movie of movies" class="card">
-        <div class="card-body">
-            <h5 class="card-title">{{movie.title}}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">{{movie.release_year}}</h6>
-            <h6 class="card-subtitle mb-2 text-muted">{{movie.rating}}</h6>
-            <p class="card-text">{{movie.description}}</p>
-            <a href="#" class="card-link">Show more</a>
+<div>
+    <app-navbar></app-navbar>
+</div>
+<div class="p-5 d-inline-flex justify-content-center" >
+    <div>
+        <div *ngIf="!isUserLogin" id="login_box"><div id="login_box_idiv">Your personal gateway to entertainment starts here! Sign in to access a wide range of movies and TV shows tailored just for you.</div></div>
+        <div *ngIf="!isMoviesLoading && errorMessage" >{{errorMessage}}</div>
+    </div>
+    <div *ngIf="isUserLogin" class="col-lg-10">
+        <div class="d-flex mb-4" role="search">
+            <input class="form-control me-2" type="search" [(ngModel)]="search" placeholder="Search"
+                aria-label="Search">
+            <button class="btn btn-outline-success" (click)="searchMovie()">Search</button>
+            <div class="nav-item dropdown dropdown-button border ms-2">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    {{movieType?movieType: 'Filter By'}}
+                </a>
+                <ul class="dropdown-menu">
+                    <li *ngFor="let type of movieTypes">
+                        <a (click)="applyMovieFilter(type)" class="dropdown-item">{{type}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div *ngIf="isUserLogin && isMoviesLoading" id="loading_div"><div>Please wait, awesomeness is on the way 🤩!</div></div>
+        <div class="d-inline-flex justify-content-center">
+            <div class="grid-container">
+                <div *ngFor="let movie of movies" class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{movie.title}}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{movie.release_year}}</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">{{movie.rating}}</h6>
+                        <p class="card-text">{{movie.description}}</p>
+                        <button class="btn btn-outline-success" (click)="seeMore(movie)">See more</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="my-4 custom-margin">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item" [ngClass]="{disabled: page == 1}">
+                        <a class="page-link" (click)="changePage(page-1)" >Previous</a>
+                    </li>
+                    <li *ngFor="let pageIndex of pagesToShow" class="page-item">
+                        <a class="page-link" (click)="changePage(pageIndex)" [ngClass]="{active: pageIndex == page}">{{pageIndex}}</a>
+                    </li>
+                    <li class="page-item" [ngClass]="{disabled: page == totalPages}">
+                        <a class="page-link" (click)="changePage(page+1)">Next</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
     </div>
 </div>

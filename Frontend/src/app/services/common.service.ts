@@ -6,8 +6,19 @@ import { environment } from 'src/environment/environment';
   providedIn: 'root',
 })
 export class CommonService {
+
+  movieDetails: any;
+
   constructor(private http: HttpClient) {}
 
+  checkUserLogin = () => {
+    if(localStorage.getItem('userData')) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  
   signUp = (reqBody: any) => {
     return this.http.post(environment.serverUrl + '/user/signup', reqBody);
   };
@@ -16,6 +27,14 @@ export class CommonService {
     return this.http.post(environment.serverUrl + '/user/login', reqBody);
   };
 
+  setMovieDetails = (details: any) => {
+    this.movieDetails = details;
+  }
+
+  getMovieDetails = () => {
+    return this.movieDetails;
+  }
+  
   getMovies = (queryParams: any) => {
     let params = '';
     if (queryParams.page) params += 'page=' + queryParams.page;
@@ -25,7 +44,7 @@ export class CommonService {
 
     const headers = new HttpHeaders().set('Authorization', queryParams.token);
 
-    return this.http.get(environment.serverUrl + '/data/?' + params, {
+    return this.http.get(environment.serverUrl + '/fletnix/data?' + params, {
       headers: headers,
     });
   };

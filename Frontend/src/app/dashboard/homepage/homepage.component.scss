@@ -1,10 +1,59 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700);
+@import url(https://fonts.googleapis.com/css?family=Rubik:400,900);
+
 .grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Three equal-width columns */
-    grid-gap: 10px; /* Gap between grid items */
-  }
-  
-  .grid-item {
-    /* Style for grid items */
-  }
-  
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+.dropdown-button {
+  align-items: center;
+  display: flex;
+  border-radius: 5px;
+  width: 150px;
+  justify-content: center;
+}
+.card-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+#login_box{
+  // border: 1px solid red;
+  margin-left:32%;
+  width:60%;
+  height:50%;
+  background: url(../../../assets/images/lock.gif) 100%;
+  background-size: cover;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color:rgb(79, 77, 77);
+  font-weight: 400;
+  font-family: 'Rubik', Sans-serif;
+  margin-top: 50px;
+}
+#login_box_idiv{
+   margin-top: 150px;
+}
+.card{
+  background-color: rgb(170, 227, 206);
+}
+
+#loading_div{
+  border: 1px solid rgb(120, 120, 120);
+  border-radius: 20px;
+  width: 400px;
+  height: 300px;
+  text-align: center;
+  font-family: 'Rubik', Sans-serif;
+  background-color: antiquewhite;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.custom-margin {
+  margin-bottom: 50px;
+}

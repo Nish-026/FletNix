@@ -1,0 +1,59 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700);
+@import url(https://fonts.googleapis.com/css?family=Rubik:400,900);
+
+#card {
+    animation: backAn 50s infinite;
+    color: #fff;
+    padding: 30px;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    position: absolute;
+    z-index: 1;
+    background: url(https://riverbeats.life/neworleans/wp-content/uploads/2018/07/Atlantis.png) 100% bottom;
+    padding:50px;
+}
+
+#card .text-block {
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 3 10 rgba(0, 0, 0, 0.7);
+}
+
+#card .text-block h1 {
+    font-family: 'Rubik', Sans-serif;
+    font-size: 3em;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+#card .text-block h1 small {
+    font-size: .4em;
+    color: #ccc;
+    position: relative;
+    bottom: 10px;
+}
+
+#card .text-block h3 {
+    margin: 0;
+    font-weight: 700;
+}
+
+#card .text-block p {
+    font-weight: 300;
+    width: 60%;
+}
+
+@keyframes backAn {
+    0% {
+        background-size: 100%;
+    }
+
+    50% {
+        background-size: 250%;
+    }
+
+    100% {
+        background-size: 100%;
+    }
+}

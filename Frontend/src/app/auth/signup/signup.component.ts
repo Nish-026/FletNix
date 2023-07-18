@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonService } from 'src/app/services/common.service';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -26,9 +26,28 @@ export class SignupComponent implements OnInit {
       password: this.password,
       age: this.age,
       username: this.userName
-    }).subscribe((data)=> {
-      this.router.navigate(['/login']);
-    })
+    }).subscribe((data:any)=> {
+      console.log(data);
+      if (data.status == 200) {
+        Swal.fire({
+          icon: 'success',
+          title: 'SignUp Successful',
+          text: 'You have successfully Registered.',
+        });
+        setTimeout(() => {
+          this.router.navigate(['/login']);
+        }, 3000);
+      }
+      
+    },(error: any) => {
+      console.log('An error occurred:', error);
+      Swal.fire({
+        icon: 'error',
+        title: 'Sign Up Failed',
+        text: `${error.error.message}`,
+      });
+    }
+    )
   }
 
 }
