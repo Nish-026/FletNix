@@ -8,6 +8,7 @@ FletNix is a web application that allows users to search for and filter through 
 
 ## Table of Contents
 - [Features](#features)
+- [Deployment](#deployment)
 - [Setup](#setup)
 - [Importing Data](#importing-data)
 - [Authentication](#authentication)
@@ -24,7 +25,9 @@ FletNix is a web application that allows users to search for and filter through 
 - Age-based content filtering to hide "R" rated items for users below 18 years old.
 - Filter options to select between movies and TV shows.
 - Detailed information page for each item with director, cast, country, release year, rating, duration, genres, and description.
-
+## Deployment
+Backend on [Cyclic](https://good-erin-vulture-toga.cyclic.app) <br>
+Frontend on [Netlify](https://fletnixv2.netlify.app)
 ## Setup
 To set up and run the FletNix application, follow these steps:
 
