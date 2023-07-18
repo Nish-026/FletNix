@@ -2,9 +2,9 @@
 ![FletNix-removebg-preview](https://github.com/Nish-026/FletNix/assets/115637679/2d4ced14-74c6-40ec-8b25-1b197b542d91)
 
 
-# FletNix - Netflix Movie/TV Show Search and Filter App
+# FletNix - Movie/TV Show Search and Filter App
 
-FletNix is a web application that allows users to search for and filter through a comprehensive list of movies and TV shows available on Netflix. Users can register and log in using their email, password, and age. The app provides basic authentication, pagination, search functionality, and content filtering based on age.
+FletNix is a web application that allows users to search for and filter through a comprehensive list of movies and TV shows. Users can register and log in using their email, password, username and age. The app provides basic authentication, pagination, search functionality, and content filtering based on age.
 
 ## Table of Contents
 - [Features](#features)
@@ -24,7 +24,6 @@ FletNix is a web application that allows users to search for and filter through 
 - Age-based content filtering to hide "R" rated items for users below 18 years old.
 - Filter options to select between movies and TV shows.
 - Detailed information page for each item with director, cast, country, release year, rating, duration, genres, and description.
-- Basic test cases to ensure application functionality.
 
 ## Setup
 To set up and run the FletNix application, follow these steps:
@@ -44,7 +43,7 @@ To import the provided data into MongoDB, follow these steps:
 3. Verify that the data has been successfully imported.
 
 ## Authentication
-FletNix provides a secure authentication mechanism. Users can register and create an account using their email, password, and age. To log in, users must provide their registered email and password. The application ensures age-appropriate content visibility based on the user's age.
+FletNix provides a secure authentication mechanism. Users can register and create an account using their email, password, username and age. To log in, users must provide their registered email and password. The application ensures age-appropriate content visibility based on the user's age.
 
 ## Pagination
 The FletNix application displays a paginated list of movies and TV shows. Each page contains 15 items, allowing users to easily navigate through the extensive catalog.
