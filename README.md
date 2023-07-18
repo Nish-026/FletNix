@@ -52,7 +52,7 @@ To set up and run the FletNix application, follow these steps:
 To import the provided data into MongoDB, follow these steps:
 
 1. Ensure that you have MongoDB installed and running on your local machine.
-2. Use the provided import script or command to import the CSV file into the MongoDB database.
+2. Use the provided CSV file into the MongoDB database - Link[https://drive.google.com/file/d/1a9S-Qfs1Mc_SutljdvOEAnJ5QJLEAebB/view].
 3. Verify that the data has been successfully imported.
 
 ## Authentication
@@ -77,14 +77,14 @@ Clicking on an item in the list will take users to a dedicated detail page for t
 ### Tech Stack
 
 #### Front-End
--  Angular <img src="https://github.com/Nish-026/Learning_Angular/assets/115637679/e5dd2321-8868-4e4a-b607-207baf6e436b" alt="HTML Icon" width="32" height="22">
+-  Angular <img src="https://github.com/Nish-026/Learning_Angular/assets/115637679/e5dd2321-8868-4e4a-b607-207baf6e436b" alt="HTML Icon" width="40" height="40">
 
 #### Back-End
--  Node JS  <img src="https://raw.githubusercontent.com/get-icon/geticon/fc0f660daee147afb4a56c64e12bde6486b73e39/icons/nodejs.svg" alt="HTML Icon" width="32" height="22">
--  Express  <img src="https://raw.githubusercontent.com/get-icon/geticon/fc0f660daee147afb4a56c64e12bde6486b73e39/icons/express.svg" alt="HTML Icon" width="32" height="22">
+-  Node JS  <img src="https://raw.githubusercontent.com/get-icon/geticon/fc0f660daee147afb4a56c64e12bde6486b73e39/icons/nodejs.svg" alt="HTML Icon" width="50" height="50">
+-  Express  <img src="https://raw.githubusercontent.com/get-icon/geticon/fc0f660daee147afb4a56c64e12bde6486b73e39/icons/express.svg" alt="HTML Icon" width="50" height="50">
 
 
 #### DataBase
--  Mongo DB  <img src="https://raw.githubusercontent.com/get-icon/geticon/fc0f660daee147afb4a56c64e12bde6486b73e39/icons/mongodb-icon.svg" alt="HTML Icon" width="32" height="22">
+-  Mongo DB  <img src="https://raw.githubusercontent.com/get-icon/geticon/fc0f660daee147afb4a56c64e12bde6486b73e39/icons/mongodb-icon.svg" alt="HTML Icon" width="40" height="40">
 
 
