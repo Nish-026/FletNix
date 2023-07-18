@@ -9,7 +9,7 @@ const {authMiddleware}= require("./middleware/authentication")
 app.use(express.json())
 
 app.use(cors({
-    origin: 'http://localhost:4200'
+    origin: 'https://dynamic-mousse-45c6b1.netlify.app'
   }));
 
 app.use((req, res, next) => {
