@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonService } from 'src/app/services/common.service';
 import { Router } from '@angular/router';
-
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
@@ -89,7 +88,8 @@ export class HomepageComponent implements OnInit {
     };
     this.commonService.getMovies(reqBody).subscribe((data: any) => {
       this.isMoviesLoading = false;
-      if(data?.movies?.length) {
+      this.movies=[]
+      if(data?.movies?.length>=0) {
         this.errorMessage = '';
         this.movies = data.movies;
         this.page = parseInt(data.currentPage);

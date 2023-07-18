@@ -41,7 +41,7 @@
   background-color: rgb(170, 227, 206);
 }
 
-#loading_div{
+#loading_div,#No_result_div{
   border: 1.5px solid rgb(120, 120, 120);
   border-radius: 20px;
   width: 80%;
@@ -63,4 +63,5 @@
 .p-5 {
   width:100%;
   margin:auto;
+  margin-top: 50px;
 }
