@@ -1,8 +1,7 @@
 <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="/homepage"><div id="img-div"><img src="../../../assets/images/FletNix-removebg-preview.png"></div></a>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        </div>
+        <a class="navbar-brand" routerLink="/homepage"><div id="img-div"><img src="../../../assets/images/FletNix-removebg-preview.png"></div></a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent"></div>
         <button class="btn btn-outline-success" *ngIf="isLogin" (click)="logOut()">Logout</button>
         <button routerLink="/login" class="btn btn-outline-success mr-4" *ngIf="!isLogin" >Log In</button>
         <button routerLink="/signup" class="btn btn-outline-success signup" *ngIf="!isLogin" >Sign Up</button>
