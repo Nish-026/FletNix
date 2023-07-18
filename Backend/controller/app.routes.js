@@ -3,14 +3,14 @@ const appRouter = express.Router();
 const {Data} = require("../model/data.model");
 const {User} = require("../model/user.model")
 const pageSize = 15; // Number of items per page
-
+const currentYear = new Date().getFullYear();
 appRouter.get('/data', async (req, res) => {
   try {
     const page = req.query.page || 1; // Current page number
     const skip = (page - 1) * pageSize;
     const type = req.query.type;
     const user = await User.findById(req.body.user); // Retrieve user by ID
-
+    let Age =0
     let query = {};
     const searchQuery = req.query.q; // Search query for movie title or cast
     if (searchQuery) {
@@ -26,7 +26,8 @@ appRouter.get('/data', async (req, res) => {
       // Add item type condition to the query
       query.type = type;
     }
-    if (user.age < 18) {
+    Age= user.age+(currentYear-user.RegistrationYear)
+    if (Age< 18) {
       // Check if user is under 18 and exclude R-rated movies
       query.rating = { $ne: 'R' };
     }
@@ -74,7 +75,5 @@ module.exports={
     appRouter
 }
 
-//Routes
-// localhost:4500/data/?page=1&pageSize=15&type=Movie
 
-// localhost:4500/data/?page=1&pageSize=15&q=Kota
+// localhost:4500/fletnix/data?page=1&pageSize=15&type=Movie
