@@ -19,7 +19,8 @@ FletNix is a web application that allows users to search for and filter through 
 - [Detail Page](#detail-page)
 
 ## Features
-- User registration and login with email, password, and age verification.
+- User registration and login with email, password.
+- JWT Authentication
 - Paginated list of movies and TV shows with 15 items per page.
 - Real-time search functionality to find movies or TV shows by title or cast.
 - Age-based content filtering to hide "R" rated items for users below 18 years old.
