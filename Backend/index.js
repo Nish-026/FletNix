@@ -9,8 +9,12 @@ const {authMiddleware}= require("./middleware/authentication")
 app.use(express.json())
 
 app.use(cors({
-    origin: 'https://fletnixv2.netlify.app'
+    origin: [
+      'https://fletnixv2.netlify.app',
+      'http://localhost:4200'
+    ]
   }));
+  
 
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*'); // Replace with your frontend URL
