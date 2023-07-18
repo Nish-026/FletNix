@@ -39,13 +39,13 @@ userRouter.post('/login', async (req, res) => {
       // Find the user by username
       const user = await User.findOne({ email });
       if (!user) {
-        return res.status(401).json({ message: 'Invalid username or password' });
+        return res.status(401).json({ message: 'Invalid username or password',status:401 });
       }
   
       // Compare the password
       const isPasswordMatch = await bcrypt.compare(password, user.password);
       if (!isPasswordMatch) {
-        return res.status(401).json({ message: 'Wrong password' });
+        return res.status(401).json({ message: 'Wrong password',status:401 });
       }
   
       // Create a JWT
@@ -53,9 +53,9 @@ userRouter.post('/login', async (req, res) => {
         expiresIn: '24h'
       });
 
-      res.status(200).json({ message:"login successful",token,username:user.username});
+      res.status(200).json({ status:200,message:"login successful",token,username:user.username});
     } catch (error) {
-        res.status(500).json({ message: 'Something went wrong' });
+        res.status(500).json({ message: 'Something went wrong',status:500 });
     }
   });
 
