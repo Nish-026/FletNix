@@ -43,17 +43,25 @@
 }
 
 #loading_div{
-  border: 1px solid rgb(120, 120, 120);
+  border: 1.5px solid rgb(120, 120, 120);
   border-radius: 20px;
-  width: 400px;
+  width: 80%;
   height: 300px;
   text-align: center;
   font-family: 'Rubik', Sans-serif;
-  background-color: antiquewhite;
+  background-color: rgb(249, 240, 227);
   display:flex;
   justify-content: center;
   align-items: center;
+  margin:auto;
 }
 .custom-margin {
   margin-bottom: 50px;
+}
+.pagination{
+  cursor: pointer;
+}
+.p-5 {
+  width:100%;
+  margin:auto;
 }

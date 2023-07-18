@@ -62,7 +62,6 @@ export class HomepageComponent implements OnInit {
     }
     this.pagesToShow = [];
     for (let i = startIndex; i <= endIndex; i++) this.pagesToShow.push(i);
-    console.log(this.pagesToShow);
   }
 
   changePage = (pageIndex: number) => {
