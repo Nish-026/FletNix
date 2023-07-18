@@ -4,7 +4,7 @@ const {Data} = require("../model/data.model");
 const {User} = require("../model/user.model")
 const pageSize = 15; // Number of items per page
 
-appRouter.get('/', async (req, res) => {
+appRouter.get('/data', async (req, res) => {
   try {
     const page = req.query.page || 1; // Current page number
     const skip = (page - 1) * pageSize;
@@ -53,7 +53,7 @@ appRouter.get('/', async (req, res) => {
 
 
 
-appRouter.get('/:id', async (req, res) => {
+appRouter.get('/data/:id', async (req, res) => {
     try {
       const itemId = req.params.id;
       

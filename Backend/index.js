@@ -27,7 +27,7 @@ app.get("/",(req,res)=>{
 
 app.use("/user",userRouter)
 app.use(authMiddleware)
-app.use("/data",appRouter)
+app.use("/fletnix",appRouter)
 app.listen(process.env.PORT,async()=>{
 
     try{
