@@ -45,8 +45,8 @@ To set up and run the FletNix application, follow these steps:
 1. Clone the repository to your local machine.
 2. Install the required dependencies for the frontend and backend servers by following the instructions in their respective directories.
 3. Configure the necessary environment variables.
-4. Start the backend server.
-5. Start the frontend server.
+4. Start the backend server using command - npm run server.
+5. Start the frontend server using command - npm build.
 6. Open the application in your web browser.
 
 ## Importing Data
