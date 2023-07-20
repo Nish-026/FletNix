@@ -32,7 +32,7 @@ appRouter.get('/data', async (req, res) => {
       query.rating = { $ne: 'R' };
     }
 
-    const movies = await Data.find(query).skip(skip).limit(pageSize);
+    const movies = await Data.find(query).skip(skip).limit(pageSize).sort({date_added:1});
 
     // Count the total number of movies/TV shows in the collection
     const totalCount = await Data.countDocuments(query);

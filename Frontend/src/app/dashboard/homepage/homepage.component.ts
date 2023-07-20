@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.scss'],
 })
-export class HomepageComponent implements OnInit {
+export class HomepageComponent implements OnInit {   
   userData: any;
   page: number = 1;
   pageSize: number = 15;
@@ -21,7 +21,7 @@ export class HomepageComponent implements OnInit {
   isMoviesLoading: boolean = true;
   errorMessage: string = '';
 
-  constructor(private commonService: CommonService, private router: Router) {}
+  constructor(private commonService: CommonService, private router: Router) {}   // The private access modifier makes these parameters private class properties, meaning they can only be accessed within the class and not from outside.
 
   ngOnInit(): void {
     if(this.commonService.checkUserLogin()) {
@@ -48,14 +48,14 @@ export class HomepageComponent implements OnInit {
       startIndex = 1;
       endIndex = this.totalPages;
     } else {
-      if (this.page + 4 > this.totalPages) {
-        endIndex = this.totalPages;
+      if (this.page + 4 > this.totalPages) {    // if the end index is close to totalpages
+        endIndex = this.totalPages;   
         startIndex = this.totalPages - 9;
-      } else if (this.page - 4 < 1) {
+      } else if (this.page - 4 < 1) {         // if the end index is close to startindex
         startIndex = 1;
         endIndex = 9;
       } else {
-        startIndex = this.page - 4;
+        startIndex = this.page - 4;          //in all rest other cases
         endIndex = this.page + 4;
       }
     }
@@ -77,6 +77,7 @@ export class HomepageComponent implements OnInit {
     this.commonService.setMovieDetails(movieDetails);
     this.router.navigate(['/detailsPage']);
   }
+  
 
   getMovies = () => {
     let reqBody = {

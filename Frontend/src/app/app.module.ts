@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SignupComponent } from './auth/signup/signup.component';
@@ -11,7 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { DetailsPageComponent } from './dashboard/details-page/details-page.component';
 
-@NgModule({
+@NgModule({       //All Components,modules,services used in application are declared here, appmodule
   declarations: [
     AppComponent,
     SignupComponent,

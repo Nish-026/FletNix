@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'homepage', component: HomepageComponent },
   { path: 'detailsPage', component: DetailsPageComponent },
-  { path: '', component: HomepageComponent },
+  { path: '', component: HomepageComponent },   // we need to write the empty path at last
 ];
 
 @NgModule({
