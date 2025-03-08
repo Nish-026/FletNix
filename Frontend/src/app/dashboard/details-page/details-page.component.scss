@@ -4,13 +4,13 @@
 #card {
     animation: backAn 50s infinite;
     color: #fff;
-    padding: 30px;
     width: -webkit-fill-available;
     height: -webkit-fill-available;
     position: absolute;
     z-index: 1;
     background: url(https://riverbeats.life/neworleans/wp-content/uploads/2018/07/Atlantis.png) 100% bottom;
     padding:50px;
+    margin-top:50px;
 }
 
 #card .text-block {
